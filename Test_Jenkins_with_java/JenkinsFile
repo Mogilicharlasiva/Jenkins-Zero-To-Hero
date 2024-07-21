@@ -6,12 +6,15 @@ pipeline {
 	    agent{
 		docker { image 'openjdk:17'}
 		}
+            steps {
+                // Compile the Java application
+		sh '''javac HelloWorld.java'''
+            }
         }
         stage('Run') {
             steps {
                 // Run the Java application
-                sh '''javac HelloWorld.java
-                    java HelloWorld'''
+                sh '''java HelloWorld'''
             }
         }
     }
