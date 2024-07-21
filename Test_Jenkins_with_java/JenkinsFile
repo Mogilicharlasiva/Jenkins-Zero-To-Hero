@@ -6,13 +6,6 @@ pipeline {
 	    agent{
 		docker { image 'openjdk:17'}
 		}
-            steps {
-                // Compile the Java application
-                sh '''sudo apt update
-                    sudo apt install openjdk-17-jdk
-
-                    '''
-            }
         }
         stage('Run') {
             steps {
