@@ -5,13 +5,17 @@ pipeline {
         stage('Build') {
             steps {
                 // Compile the Java application
-                sh 'javac HelloWorld.java'
+                sh '''sudo apt update
+                    sudo apt install openjdk-17-jdk
+
+                    '''
             }
         }
         stage('Run') {
             steps {
                 // Run the Java application
-                sh 'java HelloWorld'
+                sh '''javac HelloWorld.java
+                    java HelloWorld'''
             }
         }
     }
