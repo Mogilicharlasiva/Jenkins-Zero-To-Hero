@@ -3,6 +3,9 @@ pipeline {
 
     stages {
         stage('Build') {
+	    agent{
+		docker { image 'openjdk:17'}
+		}
             steps {
                 // Compile the Java application
                 sh '''sudo apt update
