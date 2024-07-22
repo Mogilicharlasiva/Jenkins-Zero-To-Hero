@@ -14,13 +14,13 @@ pipeline {
 	stage('Build') {
             steps {
                 // Compile the Java application
-		sh '''javac HelloWorld.java'''
+		sh '''Test_Jenkins_with_java/javac HelloWorld.java'''
             }
         }
         stage('Run') {
             steps {
                 // Run the Java application
-                sh '''java HelloWorld'''
+                sh '''Test_Jenkins_with_java/java HelloWorld'''
             }
         }
     }
