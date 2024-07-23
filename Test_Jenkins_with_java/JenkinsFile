@@ -8,8 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                //git credentialsId: 'MogilicharlaSivaGitId', url:
-		git 'https://github.com/Mogilicharlasiva/Jenkins-Zero-To-Hero.git'
+                git credentialsId: 'MogilicharlaSivaGitId', url: 'https://github.com/Mogilicharlasiva/Jenkins-Zero-To-Hero.git', branch: 'main'
             }
         }
 	stage('Build') {
